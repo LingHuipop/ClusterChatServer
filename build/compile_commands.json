@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/plh/work_u18/test/c++/study/offer/chatServer/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../thirdparty  -g -g   -o src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/plh/work_u18/test/c++/study/offer/chatServer/src/server/chatserver.cpp",
+  "file": "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/chatserver.cpp"
+},
+
+{
+  "directory": "/home/plh/work_u18/test/c++/study/offer/chatServer/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../thirdparty  -g -g   -o src/server/CMakeFiles/ChatServer.dir/main.cpp.o -c /home/plh/work_u18/test/c++/study/offer/chatServer/src/server/main.cpp",
+  "file": "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/main.cpp"
+},
+
+{
+  "directory": "/home/plh/work_u18/test/c++/study/offer/chatServer/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../thirdparty  -g -g   -o src/server/CMakeFiles/ChatServer.dir/test.cpp.o -c /home/plh/work_u18/test/c++/study/offer/chatServer/src/server/test.cpp",
+  "file": "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/test.cpp"
+}
+]

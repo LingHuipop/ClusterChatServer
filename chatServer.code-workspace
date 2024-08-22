@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.cpp": "cpp",
+			"iostream": "cpp",
+			"functional": "cpp",
+			"string": "cpp"
+		},
+		"cmake.buildEnvironment": {
+			"cmake.cmakePath": "/usr/bin/cmake"
+		}
+	}
+	
+}
