@@ -127,6 +127,13 @@ build src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: CXX_COMPILER__ChatS
   OBJECT_DIR = src/server/CMakeFiles/ChatServer.dir
   OBJECT_FILE_DIR = src/server/CMakeFiles/ChatServer.dir
 
+build src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: CXX_COMPILER__ChatServer ../src/server/chatservice.cpp || cmake_object_order_depends_target_ChatServer
+  DEP_FILE = src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o.d
+  FLAGS = -g -g
+  INCLUDES = -I../include -I../include/server -I../thirdparty
+  OBJECT_DIR = src/server/CMakeFiles/ChatServer.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/ChatServer.dir
+
 build src/server/CMakeFiles/ChatServer.dir/main.cpp.o: CXX_COMPILER__ChatServer ../src/server/main.cpp || cmake_object_order_depends_target_ChatServer
   DEP_FILE = src/server/CMakeFiles/ChatServer.dir/main.cpp.o.d
   FLAGS = -g -g
@@ -149,7 +156,7 @@ build src/server/CMakeFiles/ChatServer.dir/test.cpp.o: CXX_COMPILER__ChatServer 
 #############################################
 # Link the executable ../bin/ChatServer
 
-build ../bin/ChatServer: CXX_EXECUTABLE_LINKER__ChatServer src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o src/server/CMakeFiles/ChatServer.dir/main.cpp.o src/server/CMakeFiles/ChatServer.dir/test.cpp.o
+build ../bin/ChatServer: CXX_EXECUTABLE_LINKER__ChatServer src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o src/server/CMakeFiles/ChatServer.dir/main.cpp.o src/server/CMakeFiles/ChatServer.dir/test.cpp.o
   FLAGS = -g -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -lmuduo_net  -lmuduo_base  -lpthread
