@@ -1,4 +1,4 @@
-# Install script for directory: /home/plh/work_u18/test/c++/study/offer/chatServer/src/server
+# Install script for directory: /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

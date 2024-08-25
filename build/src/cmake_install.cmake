@@ -1,4 +1,4 @@
-# Install script for directory: /home/plh/work_u18/test/c++/study/offer/chatServer/src
+# Install script for directory: /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/cmake_install.cmake")
+  include("/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/cmake_install.cmake")
 
 endif()
 

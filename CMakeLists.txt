@@ -1,18 +1,19 @@
 cmake_minimum_required(VERSION 3.0)
 project(chat)
 
-#ÅäÖÃ±àÒëÑ¡Ïî
+#é…ç½®ç¼–è¯‘é€‰é¡¹
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -g)
 
-#ÅäÖÃ×ÓÄ¿Â¼µÄËÑË÷Â·¾¶
+#é…ç½®å­ç›®å½•çš„æœç´¢è·¯å¾„
 #add_subdirectory(testmuduo)
 
-#ÅäÖÃ×îÖÕµÄ¿ÉÖ´ĞĞÎÄ¼şÊä³öµÄÂ·¾¶
+#é…ç½®æœ€ç»ˆçš„å¯æ‰§è¡Œæ–‡ä»¶è¾“å‡ºçš„è·¯å¾„
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
-#Í·ÎÄ¼şµÄËÑË÷Â·¾¶
+#å¤´æ–‡ä»¶çš„æœç´¢è·¯å¾„
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/include/server)
+include_directories(${PROJECT_SOURCE_DIR}/include/server/db)
 include_directories(${PROJECT_SOURCE_DIR}/thirdparty)
-#¼ÓÔØ×ÓÄ¿Â¼
+#åŠ è½½å­ç›®å½•
 add_subdirectory(src)
