@@ -16,6 +16,11 @@
 },
 {
   "directory": "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server",
+  "command": "/usr/bin/g++   -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/include -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/include/server -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/include/server/db -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/thirdparty  -g -g   -o CMakeFiles/ChatServer.dir/offlinemessagemodel.cpp.o -c /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/offlinemessagemodel.cpp",
+  "file": "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/offlinemessagemodel.cpp"
+},
+{
+  "directory": "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server",
   "command": "/usr/bin/g++   -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/include -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/include/server -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/include/server/db -I/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/thirdparty  -g -g   -o CMakeFiles/ChatServer.dir/usermodel.cpp.o -c /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/usermodel.cpp",
   "file": "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/usermodel.cpp"
 },

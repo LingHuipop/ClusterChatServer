@@ -7,6 +7,7 @@
 #include <mutex>
 
 #include "usermodel.hpp"
+#include "offlinemessagemodel.hpp"
 #include "json.hpp"
 
 using namespace std;
@@ -28,6 +29,10 @@ public:
     void login(const TcpConnectionPtr &conn, json &js, Timestamp time);
     //处理注册业务
     void reg(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    //一对一聊天业务
+    void oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    //服务器异常，业务重置方法
+    void reset();
     //获取消息对应的处理器
     MsgHandler getHandler(int msgId);
     //处理客户端异常退出
@@ -45,7 +50,8 @@ private:
     //定义互斥锁 保证_userConnMap线程安全
     mutex _connMutex;
     //数据操作类对象
-    UserModel *_userModel;
+    UserModel _userModel;
+    OfflineMsgModel _offlineMsgModel;
 };
 
 #endif
