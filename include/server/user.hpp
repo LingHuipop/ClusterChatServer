@@ -26,7 +26,7 @@ public:
     string getPwd() const {return this->password;}
     string getState() const {return this->state;}
 
-private:
+protected:
     int id;
     string name;
     string password;

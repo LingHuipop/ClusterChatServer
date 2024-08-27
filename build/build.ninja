@@ -134,8 +134,22 @@ build src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: CXX_COMPILER__Chat
   OBJECT_DIR = src/server/CMakeFiles/ChatServer.dir
   OBJECT_FILE_DIR = src/server/CMakeFiles/ChatServer.dir
 
+build src/server/CMakeFiles/ChatServer.dir/friendmodel.cpp.o: CXX_COMPILER__ChatServer ../src/server/friendmodel.cpp || cmake_object_order_depends_target_ChatServer
+  DEP_FILE = src/server/CMakeFiles/ChatServer.dir/friendmodel.cpp.o.d
+  FLAGS = -g -g
+  INCLUDES = -I../include -I../include/server -I../include/server/db -I../thirdparty
+  OBJECT_DIR = src/server/CMakeFiles/ChatServer.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/ChatServer.dir
+
 build src/server/CMakeFiles/ChatServer.dir/main.cpp.o: CXX_COMPILER__ChatServer ../src/server/main.cpp || cmake_object_order_depends_target_ChatServer
   DEP_FILE = src/server/CMakeFiles/ChatServer.dir/main.cpp.o.d
+  FLAGS = -g -g
+  INCLUDES = -I../include -I../include/server -I../include/server/db -I../thirdparty
+  OBJECT_DIR = src/server/CMakeFiles/ChatServer.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/ChatServer.dir
+
+build src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cpp.o: CXX_COMPILER__ChatServer ../src/server/offlinemessagemodel.cpp || cmake_object_order_depends_target_ChatServer
+  DEP_FILE = src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cpp.o.d
   FLAGS = -g -g
   INCLUDES = -I../include -I../include/server -I../include/server/db -I../thirdparty
   OBJECT_DIR = src/server/CMakeFiles/ChatServer.dir
@@ -163,7 +177,7 @@ build src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o: CXX_COMPILER__ChatServer
 #############################################
 # Link the executable ../bin/ChatServer
 
-build ../bin/ChatServer: CXX_EXECUTABLE_LINKER__ChatServer src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o src/server/CMakeFiles/ChatServer.dir/main.cpp.o src/server/CMakeFiles/ChatServer.dir/usermodel.cpp.o src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o
+build ../bin/ChatServer: CXX_EXECUTABLE_LINKER__ChatServer src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o src/server/CMakeFiles/ChatServer.dir/friendmodel.cpp.o src/server/CMakeFiles/ChatServer.dir/main.cpp.o src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cpp.o src/server/CMakeFiles/ChatServer.dir/usermodel.cpp.o src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o
   FLAGS = -g -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -lmuduo_net  -lmuduo_base  -lmysqlclient  -lpthread

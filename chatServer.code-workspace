@@ -9,7 +9,9 @@
 			"*.cpp": "cpp",
 			"iostream": "cpp",
 			"functional": "cpp",
-			"string": "cpp"
+			"string": "cpp",
+			"vector": "cpp",
+			"unordered_map": "cpp"
 		},
 		"cmake.buildEnvironment": {
 			"cmake.cmakePath": "/usr/bin/cmake"

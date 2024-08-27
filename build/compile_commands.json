@@ -13,9 +13,16 @@
 
 {
   "directory": "/home/plh/work_u18/test/c++/study/offer/chatServer/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db -I../thirdparty  -g -g   -o src/server/CMakeFiles/ChatServer.dir/friendmodel.cpp.o -c /home/plh/work_u18/test/c++/study/offer/chatServer/src/server/friendmodel.cpp",
+  "file": "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/friendmodel.cpp"
+},
+
+{
+  "directory": "/home/plh/work_u18/test/c++/study/offer/chatServer/build",
   "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db -I../thirdparty  -g -g   -o src/server/CMakeFiles/ChatServer.dir/main.cpp.o -c /home/plh/work_u18/test/c++/study/offer/chatServer/src/server/main.cpp",
   "file": "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/main.cpp"
 },
+
 {
   "directory": "/home/plh/work_u18/test/c++/study/offer/chatServer/build",
   "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db -I../thirdparty  -g -g   -o src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cpp.o -c /home/plh/work_u18/test/c++/study/offer/chatServer/src/server/offlinemessagemodel.cpp",
