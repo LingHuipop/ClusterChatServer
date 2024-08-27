@@ -1128,30 +1128,6 @@
 			],
 			"type" : "STATIC",
 			"value" : "/home/plh/work_u18/test/c++/study/offer/chatServer"
-		},
-		{
-			"name" : "main_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/plh/work_u18/test/c++/study/offer/chatServer/build"
-		},
-		{
-			"name" : "main_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/plh/work_u18/test/c++/study/offer/chatServer"
 		}
 	],
 	"kind" : "cache",
