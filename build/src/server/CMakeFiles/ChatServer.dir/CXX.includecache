@@ -25,6 +25,8 @@ mutex
 -
 usermodel.hpp
 ../include/server/usermodel.hpp
+offlinemessagemodel.hpp
+../include/server/offlinemessagemodel.hpp
 json.hpp
 ../include/server/json.hpp
 
@@ -32,6 +34,12 @@ json.hpp
 mysql/mysql.h
 -
 string
+-
+
+../include/server/offlinemessagemodel.hpp
+string
+-
+vector
 -
 
 ../include/server/user.hpp
@@ -391,6 +399,8 @@ public.hpp
 /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/public.hpp
 string
 -
+vector
+-
 muduo/base/Logging.h
 -
 
@@ -403,8 +413,18 @@ muduo/base/Logging.h
 /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/main.cpp
 chatserver.hpp
 /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/chatserver.hpp
+chatservice.hpp
+/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/chatservice.hpp
 iostream
 -
+signal.h
+-
+
+/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/offlinemessagemodel.cpp
+offlinemessagemodel.hpp
+/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/offlinemessagemodel.hpp
+db.h
+/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/db.h
 
 /home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/usermodel.cpp
 usermodel.hpp
