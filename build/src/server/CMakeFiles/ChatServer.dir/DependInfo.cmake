@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/chatserver.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o"
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/chatservice.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o"
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/db/db.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o"
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/main.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/main.cpp.o"
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/model/friendmodel.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o"
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/model/groupmodel.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o"
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/model/offlinemessagemodel.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"
-  "/home/plh/work_u18/test/c++/study/offer/chatServer/src/server/model/usermodel.cpp" "/home/plh/work_u18/test/c++/study/offer/chatServer/build/src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/chatserver.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/chatservice.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/db/db.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/main.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/main.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/model/friendmodel.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/model/groupmodel.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/model/offlinemessagemodel.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"
+  "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/src/server/model/usermodel.cpp" "/home/plh/work/MyProject/gitcode/Myproject/ClusterChatServer/build/src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
