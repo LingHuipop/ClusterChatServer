@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/plh/work_u18/test/c++/study/offer/chatServer/include -I/home/plh/work_u18/test/c++/study/offer/chatServer/include/server -I/home/plh/work_u18/test/c++/study/offer/chatServer/include/server/db -I/home/plh/work_u18/test/c++/study/offer/chatServer/thirdparty 
+CXX_INCLUDES = -I/home/plh/work_u18/test/c++/study/offer/chatServer/include -I/home/plh/work_u18/test/c++/study/offer/chatServer/include/server -I/home/plh/work_u18/test/c++/study/offer/chatServer/include/server/db -I/home/plh/work_u18/test/c++/study/offer/chatServer/include/server/model -I/home/plh/work_u18/test/c++/study/offer/chatServer/thirdparty 
 

@@ -18,3 +18,7 @@
 0	1849	1724385770	src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o	6e67f3650eb02b99
 0	6	0	clean	a7c70eacb11a5051
 0	3	0	clean	a7c70eacb11a5051
+2	2505	1724837826	src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o	1cf805bc8e11fab7
+1	2506	1724837826	src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o	2664a3c70016a97b
+1	2506	1724837826	src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o	2f9880d5ce12683a
+2	2507	1724837826	src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o	633ebfdd724a94e3

@@ -49,7 +49,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             json response;
             response["msgId"] = LOGIN_MSG_ACK;
             response["errno"] = 2;
-            response["errmsg"] = "该用户已经上线,请勿重复登录";
+            response["errmsg"] = "this account is using,input another !";
             conn->send(response.dump()); 
         }
         else
@@ -89,7 +89,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
                     js["id"] = user.getId();
                     js["name"] = user.getName();
                     js["state"] = user.getState();
-                    vec2.push_back(js.dump());
+                    vec2.push_back(j s.dump());01
                 }
                 response["friends"] = vec2;
             }
@@ -104,7 +104,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         json response;
         response["msgId"] = LOGIN_MSG_ACK;
         response["errno"] = 1;
-        response["errmsg"] = "该用户不存在或者密码错误";
+        response["errmsg"] = "id or password invalid !";
         conn->send(response.dump());        
     }
 }
@@ -247,6 +247,7 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp ti
     lock_guard<mutex> lock(_connMutex);
     for (int id : useridVec)
     {
+    
         auto it = _userConnMap.find(id);
         if (it != _userConnMap.end())
         {
@@ -255,17 +256,8 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp ti
         }
         else
         {
-            // 查询toid是否在线 
-            User user = _userModel.query(id);
-            if (user.getState() == "online")
-            {
-                _redis.publish(id, js.dump());
-            }
-            else
-            {
-                // 存储离线群消息
-                _offlineMsgModel.insert(id, js.dump());
-            }
+            // 存储离线群消息
+            _offlineMsgModel.insert(id, js.dump());
         }
     }
 }
