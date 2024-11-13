@@ -19,10 +19,17 @@ ChatService *ChatService::instance()
 //注册消息以及对应的Handler回调操作
 ChatService::ChatService()
 {
-    _msgHandlerMap.insert({LOGIN_MSG,std::bind(&ChatService::login,this,_1,_2,_3)}); 
-    _msgHandlerMap.insert({REG_MSG,std::bind(&ChatService::reg,this,_1,_2,_3)}); 
-    _msgHandlerMap.insert({ONE_CHAT_MSG,std::bind(&ChatService::oneChat,this,_1,_2,_3)});
-    _msgHandlerMap.insert({ADD_FRIEND_MSG,std::bind(&ChatService::addFriend,this,_1,_2,_3)});
+  // 用户基本业务管理相关事件处理回调注册
+    _msgHandlerMap.insert({LOGIN_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});
+    _msgHandlerMap.insert({LOGINOUT_MSG, std::bind(&ChatService::loginout, this, _1, _2, _3)});
+    _msgHandlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});
+    _msgHandlerMap.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
+    _msgHandlerMap.insert({ADD_FRIEND_MSG, std::bind(&ChatService::addFriend, this, _1, _2, _3)});
+
+    // 群组业务管理相关事件处理回调注册
+    _msgHandlerMap.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
+    _msgHandlerMap.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
+    _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
 }
 
  //服务器异常，业务重置方法
@@ -89,11 +96,39 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
                     js["id"] = user.getId();
                     js["name"] = user.getName();
                     js["state"] = user.getState();
-                    vec2.push_back(j s.dump());01
+                    vec2.push_back(js.dump());
                 }
                 response["friends"] = vec2;
             }
+            
+            // 查询用户的群组信息
+            vector<Group> groupuserVec = _groupModel.queryGroups(id);
+            if (!groupuserVec.empty())
+            {
+                // group:[{groupid:[xxx, xxx, xxx, xxx]}]
+                vector<string> groupV;
+                for (Group &group : groupuserVec)
+                {
+                    json grpjson;
+                    grpjson["id"] = group.getId();
+                    grpjson["groupname"] = group.getName();
+                    grpjson["groupdesc"] = group.getDesc();
+                    vector<string> userV;
+                    for (GroupUser &user : group.getUsers())
+                    {
+                        json js;
+                        js["id"] = user.getId();
+                        js["name"] = user.getName();
+                        js["state"] = user.getState();
+                        js["role"] = user.getRole();
+                        userV.push_back(js.dump());
+                    }
+                    grpjson["users"] = userV;
+                    groupV.push_back(grpjson.dump());
+                }
 
+                response["groups"] = groupV;
+            }
             conn->send(response.dump());
         }
 
@@ -117,7 +152,7 @@ void ChatService::reg(const TcpConnectionPtr &conn, json &js, Timestamp time)
     string pwd = js["password"];
 
     User user;
-    user.setName(name);;
+    user.setName(name);
     user.setPwd(pwd);
     bool state = _userModel.insert(user);
     if(state)
@@ -155,6 +190,29 @@ MsgHandler ChatService::getHandler(int msgId)
     {
         return _msgHandlerMap[msgId];
     }
+}
+
+
+// 处理注销业务
+void ChatService::loginout(const TcpConnectionPtr &conn, json &js, Timestamp time)
+{
+    int userid = js["id"].get<int>();
+
+    {
+        lock_guard<mutex> lock(_connMutex);
+        auto it = _userConnMap.find(userid);
+        if (it != _userConnMap.end())
+        {
+            _userConnMap.erase(it);
+        }
+    }
+
+    // // 用户注销，相当于就是下线，在redis中取消订阅通道
+    // _redis.unsubscribe(userid); 
+
+    // 更新用户的状态信息
+    User user(userid, "", "", "offline");
+    _userModel.updateState(user);
 }
 
 //处理客户端异常退出

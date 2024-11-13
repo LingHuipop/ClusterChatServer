@@ -102,7 +102,7 @@ int main(int argc, char **argv)
         cout << "========================" << endl;
         cout << "choice:";
         int choice = 0;
-        cin >> choice;
+        cin >> choice;//只把缓冲区的整数读出来 后面还有回车
         cin.get(); // 读掉缓冲区残留的回车
 
         switch (choice)
@@ -118,7 +118,7 @@ int main(int argc, char **argv)
             cin.getline(pwd, 50);
 
             json js;
-            js["msgid"] = LOGIN_MSG;
+            js["msgId"] = LOGIN_MSG;
             js["id"] = id;
             js["password"] = pwd;
             string request = js.dump();
@@ -151,7 +151,7 @@ int main(int argc, char **argv)
             cin.getline(pwd, 50);
 
             json js;
-            js["msgid"] = REG_MSG;
+            js["msgId"] = REG_MSG;
             js["name"] = name;
             js["password"] = pwd;
             string request = js.dump();
@@ -259,14 +259,14 @@ void doLoginResponse(json &responsejs)
         showCurrentUserData();
 
         // 显示当前用户的离线消息  个人聊天信息或者群组消息
-        if (responsejs.contains("offlinemsg"))
+        if (responsejs.contains("offlineMsg"))
         {
-            vector<string> vec = responsejs["offlinemsg"];
+            vector<string> vec = responsejs["offlineMsg"];
             for (string &str : vec)
             {
                 json js = json::parse(str);
                 // time + [id] + name + " said: " + xxx
-                if (ONE_CHAT_MSG == js["msgid"].get<int>())
+                if (ONE_CHAT_MSG == js["msgId"].get<int>())
                 {
                     cout << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
                             << " said: " << js["msg"].get<string>() << endl;
@@ -298,7 +298,7 @@ void readTaskHandler(int clientfd)
 
         // 接收ChatServer转发的数据，反序列化生成json数据对象
         json js = json::parse(buffer);
-        int msgtype = js["msgid"].get<int>();
+        int msgtype = js["msgId"].get<int>();
         if (ONE_CHAT_MSG == msgtype)
         {
             cout << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
@@ -440,7 +440,7 @@ void addfriend(int clientfd, string str)
 {
     int friendid = atoi(str.c_str());
     json js;
-    js["msgid"] = ADD_FRIEND_MSG;
+    js["msgId"] = ADD_FRIEND_MSG;
     js["id"] = g_currentUser.getId();
     js["friendid"] = friendid;
     string buffer = js.dump();
@@ -465,7 +465,7 @@ void chat(int clientfd, string str)
     string message = str.substr(idx + 1, str.size() - idx);
 
     json js;
-    js["msgid"] = ONE_CHAT_MSG;
+    js["msgId"] = ONE_CHAT_MSG;
     js["id"] = g_currentUser.getId();
     js["name"] = g_currentUser.getName();
     js["toid"] = friendid;
@@ -493,7 +493,7 @@ void creategroup(int clientfd, string str)
     string groupdesc = str.substr(idx + 1, str.size() - idx);
 
     json js;
-    js["msgid"] = CREATE_GROUP_MSG;
+    js["msgId"] = CREATE_GROUP_MSG;
     js["id"] = g_currentUser.getId();
     js["groupname"] = groupname;
     js["groupdesc"] = groupdesc;
@@ -510,7 +510,7 @@ void addgroup(int clientfd, string str)
 {
     int groupid = atoi(str.c_str());
     json js;
-    js["msgid"] = ADD_GROUP_MSG;
+    js["msgId"] = ADD_GROUP_MSG;
     js["id"] = g_currentUser.getId();
     js["groupid"] = groupid;
     string buffer = js.dump();
@@ -535,7 +535,7 @@ void groupchat(int clientfd, string str)
     string message = str.substr(idx + 1, str.size() - idx);
 
     json js;
-    js["msgid"] = GROUP_CHAT_MSG;
+    js["msgId"] = GROUP_CHAT_MSG;
     js["id"] = g_currentUser.getId();
     js["name"] = g_currentUser.getName();
     js["groupid"] = groupid;
@@ -553,7 +553,7 @@ void groupchat(int clientfd, string str)
 void loginout(int clientfd, string)
 {
     json js;
-    js["msgid"] = LOGINOUT_MSG;
+    js["msgId"] = LOGINOUT_MSG;
     js["id"] = g_currentUser.getId();
     string buffer = js.dump();
 

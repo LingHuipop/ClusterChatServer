@@ -44,6 +44,8 @@ public:
     // 群组聊天业务
     void groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
     
+    //处理注销业务
+    void loginout(const TcpConnectionPtr &conn, json &js, Timestamp time);
     //服务器异常，业务重置方法
     void reset();
     //获取消息对应的处理器
